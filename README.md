@@ -1,12 +1,12 @@
 ## Subnautica macOS Fixes Collection
-### A compilation of bug fixes for Subnautica for (modern) macOS. Things devs are yet to fix :)
+### A compilation of bug fixes for Subnautica & SN:BZ for (modern) macOS. Things devs are yet to fix :)
 
 ---
 
 ### Fixes and improvements:
 - **Fix gamepad support:**
   - Gamepad axis and button mappings are all over the place in this game. This has been well documented over the years (most recent: [here](https://steamcommunity.com/app/264710/discussions/3/1658943116242610940/)). Now play with a controller as usual!
-- **Fix random crashes on Apple Macs**:
+- **Fix random crashes on Apple Silicon Macs**:
   - Unity can crash while allocating memory due to a race condition. Weirdly seems to affect only Rosetta 2. It crashes Subnautica seldom at init or right before saving the game (lol). Mem mgmnt for Mono was refactored upstream (2020.2 and up), so a rather ugly patch was made to make it care less.
 - **un-DRM (Epic builds):**
   - Removes the need for Epic Launcher to be in the background for the game to launch (as it would instantly quit otherwise). Also allows running the game directly for those that couldn't do it before. Technically, the game becomes DRM-free.
@@ -54,7 +54,8 @@ I can only vouch for Xbox One and Series Controllers, as those are the only ones
 
 Sure, but I'm working on my own C# & Unity patcher specifically for macOS; Mono-independent to a degree. Until then things stay this way. If you wish to make it simpler - PRs are welcome :) Also, they patch on runtime, and that introduces overhead, which is especially unnecessary for things like gamepad input.
 
-**Anything for Subnautica: BZ?**
+**Anything specific for Subnautica: BZ?**
 
 Absolutely! No deadline though.
 
+Gamepad fix and un-DRM (Epic) also work with Below Zero.
