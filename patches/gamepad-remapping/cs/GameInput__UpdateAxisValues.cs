@@ -58,75 +58,25 @@ public partial class GameInput : MonoBehaviour
 				switch (controllerLayout)
 				{
 				case GameInput.ControllerLayout.Xbox360:
-				{
 					vector2.x = UnityEngine.Input.GetAxis("ControllerAxis1");
 					vector2.y = UnityEngine.Input.GetAxis("ControllerAxis2");
 					vector4.x = UnityEngine.Input.GetAxis("ControllerAxis3");
 					vector4.y = UnityEngine.Input.GetAxis("ControllerAxis4");
 					num = UnityEngine.Input.GetAxis("ControllerAxis5");
 					num2 = UnityEngine.Input.GetAxis("ControllerAxis6");
-					float axis = UnityEngine.Input.GetAxis("ControllerAxis7");
-					float axis2 = UnityEngine.Input.GetAxis("ControllerAxis8");
-					float dpadX = 0f;
-					float dpadY = 0f;
-					if ((axis != 0f && axis2 != 0f) || (axis != 0f && axis2 != -1f))
-					{
-						if (axis2 == -1f && axis == 1f)
-						{
-							dpadY = 1f;
-						}
-						else if (axis2 == 1f && axis == -1f)
-						{
-							dpadY = -1f;
-						}
-						else if (axis2 == 1f && axis == 1f)
-						{
-							dpadX = 1f;
-						}
-						else if (axis2 == -1f && axis == -1f)
-						{
-							dpadX = -1f;
-						}
-					}
-					num3 = dpadX;
-					num4 = dpadY;
+					num3 = UnityEngine.Input.GetAxis("ControllerAxis7");
+					num4 = -UnityEngine.Input.GetAxis("ControllerAxis8");
 					break;
-				}
 				case GameInput.ControllerLayout.XboxOne:
-				{
 					vector2.x = UnityEngine.Input.GetAxis("ControllerAxis1");
 					vector2.y = UnityEngine.Input.GetAxis("ControllerAxis2");
 					vector4.x = UnityEngine.Input.GetAxis("ControllerAxis3");
 					vector4.y = UnityEngine.Input.GetAxis("ControllerAxis4");
 					num = UnityEngine.Input.GetAxis("ControllerAxis5");
 					num2 = UnityEngine.Input.GetAxis("ControllerAxis6");
-					float axis = UnityEngine.Input.GetAxis("ControllerAxis7");
-					float axis2 = UnityEngine.Input.GetAxis("ControllerAxis8");
-					float dpadX = 0f;
-					float dpadY = 0f;
-					if ((axis != 0f && axis2 != 0f) || (axis != 0f && axis2 != -1f))
-					{
-						if (axis2 == -1f && axis == 1f)
-						{
-							dpadY = 1f;
-						}
-						else if (axis2 == 1f && axis == -1f)
-						{
-							dpadY = -1f;
-						}
-						else if (axis2 == 1f && axis == 1f)
-						{
-							dpadX = 1f;
-						}
-						else if (axis2 == -1f && axis == -1f)
-						{
-							dpadX = -1f;
-						}
-					}
-					num3 = dpadX;
-					num4 = dpadY;
+					num3 = UnityEngine.Input.GetAxis("ControllerAxis7");
+					num4 = -UnityEngine.Input.GetAxis("ControllerAxis8");
 					break;
-				}
 				case GameInput.ControllerLayout.PS4:
 					vector2.x = UnityEngine.Input.GetAxis("ControllerAxis1");
 					vector2.y = UnityEngine.Input.GetAxis("ControllerAxis2");

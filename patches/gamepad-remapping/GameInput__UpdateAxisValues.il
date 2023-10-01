@@ -15,32 +15,32 @@
 14	001B	conv.i4
 15	001C	blt.s	3 (0004) ldsfld float32[] GameInput::axisValues
 16	001E	ldarg.2
-17	001F	brfalse	471 (0684) ldarg.1 
+17	001F	brfalse	363 (053E) ldarg.1 
 18	0024	call	bool GameInput::GetUseOculusInputManager()
 19	0029	brfalse	91 (011D) call valuetype GameInput/ControllerLayout GameInput::GetControllerLayout()
 20	002E	ldc.i4.1
 21	002F	ldc.i4	-0x80000000
 22	0034	call	valuetype [UnityEngine.CoreModule]UnityEngine.Vector2 ['Assembly-CSharp-firstpass']OVRInput::Get(valuetype ['Assembly-CSharp-firstpass']OVRInput/RawAxis2D, valuetype ['Assembly-CSharp-firstpass']OVRInput/Controller)
-23	0039	stloc.s	vector (11)
+23	0039	stloc.s	vector (7)
 24	003B	ldloca.s	vector2 (1)
-25	003D	ldloc.s	vector (11)
+25	003D	ldloc.s	vector (7)
 26	003F	ldfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::x
 27	0044	stfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::x
 28	0049	ldloca.s	vector2 (1)
-29	004B	ldloc.s	vector (11)
+29	004B	ldloc.s	vector (7)
 30	004D	ldfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::y
 31	0052	neg
 32	0053	stfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::y
 33	0058	ldc.i4.2
 34	0059	ldc.i4	-0x80000000
 35	005E	call	valuetype [UnityEngine.CoreModule]UnityEngine.Vector2 ['Assembly-CSharp-firstpass']OVRInput::Get(valuetype ['Assembly-CSharp-firstpass']OVRInput/RawAxis2D, valuetype ['Assembly-CSharp-firstpass']OVRInput/Controller)
-36	0063	stloc.s	vector3 (12)
+36	0063	stloc.s	vector3 (8)
 37	0065	ldloca.s	vector4 (2)
-38	0067	ldloc.s	vector3 (12)
+38	0067	ldloc.s	vector3 (8)
 39	0069	ldfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::x
 40	006E	stfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::x
 41	0073	ldloca.s	vector4 (2)
-42	0075	ldloc.s	vector3 (12)
+42	0075	ldloc.s	vector3 (8)
 43	0077	ldfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::y
 44	007C	neg
 45	007D	stfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::y
@@ -83,19 +83,19 @@
 82	00FA	ldc.i4	0x10000
 83	00FF	ldc.i4	-0x80000000
 84	0104	call	bool ['Assembly-CSharp-firstpass']OVRInput::Get(valuetype ['Assembly-CSharp-firstpass']OVRInput/RawButton, valuetype ['Assembly-CSharp-firstpass']OVRInput/Controller)
-85	0109	brfalse	413 (05CF) ldloc.1 
+85	0109	brfalse	305 (0489) ldloc.1 
 86	010E	ldloc.s	num4 (6)
 87	0110	ldc.r4	1
 88	0115	add
 89	0116	stloc.s	num4 (6)
-90	0118	br	413 (05CF) ldloc.1 
+90	0118	br	305 (0489) ldloc.1 
 91	011D	call	valuetype GameInput/ControllerLayout GameInput::GetControllerLayout()
-92	0122	stloc.s	controllerLayout (13)
-93	0124	ldloc.s	controllerLayout (13)
+92	0122	stloc.s	controllerLayout (9)
+93	0124	ldloc.s	controllerLayout (9)
 94	0126	ldc.i4.1
 95	0127	sub
-96	0128	switch	[98 (014A), 182 (0266), 266 (0382), 303 (0412), 337 (049F), 370 (052B)]
-97	0145	br	407 (05B8) ldstr "{0} ControllerLayout support is not implemented!"
+96	0128	switch	[98 (014A), 128 (01C3), 158 (023C), 195 (02CC), 229 (0359), 262 (03E5)]
+97	0145	br	299 (0472) ldstr "{0} ControllerLayout support is not implemented!"
 98	014A	ldloca.s	vector2 (1)
 99	014C	ldstr	"ControllerAxis1"
 100	0151	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
@@ -120,418 +120,310 @@
 119	01A3	stloc.s	num2 (4)
 120	01A5	ldstr	"ControllerAxis7"
 121	01AA	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
-122	01AF	stloc.s	axis (7)
+122	01AF	stloc.s	num3 (5)
 123	01B1	ldstr	"ControllerAxis8"
 124	01B6	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
-125	01BB	stloc.s	axis2 (8)
-126	01BD	ldc.r4	0
-127	01C2	stloc.s	dpadX (9)
-128	01C4	ldc.r4	0
-129	01C9	stloc.s	dpadY (10)
-130	01CB	ldloc.s	axis (7)
-131	01CD	ldc.r4	0
-132	01D2	beq.s	136 (01DD) ldloc.s axis (7)
-133	01D4	ldloc.s	axis2 (8)
-134	01D6	ldc.r4	0
-135	01DB	bne.un.s	142 (01EF) ldloc.s axis2 (8)
-136	01DD	ldloc.s	axis (7)
-137	01DF	ldc.r4	0
-138	01E4	beq.s	177 (0259) ldloc.s dpadX (9)
-139	01E6	ldloc.s	axis2 (8)
-140	01E8	ldc.r4	-1
-141	01ED	beq.s	177 (0259) ldloc.s dpadX (9)
-142	01EF	ldloc.s	axis2 (8)
-143	01F1	ldc.r4	-1
-144	01F6	bne.un.s	151 (020A) ldloc.s axis2 (8)
-145	01F8	ldloc.s	axis (7)
-146	01FA	ldc.r4	1
-147	01FF	bne.un.s	151 (020A) ldloc.s axis2 (8)
-148	0201	ldc.r4	1
-149	0206	stloc.s	dpadY (10)
-150	0208	br.s	177 (0259) ldloc.s dpadX (9)
-151	020A	ldloc.s	axis2 (8)
-152	020C	ldc.r4	1
-153	0211	bne.un.s	160 (0225) ldloc.s axis2 (8)
-154	0213	ldloc.s	axis (7)
-155	0215	ldc.r4	-1
-156	021A	bne.un.s	160 (0225) ldloc.s axis2 (8)
-157	021C	ldc.r4	-1
-158	0221	stloc.s	dpadY (10)
-159	0223	br.s	177 (0259) ldloc.s dpadX (9)
-160	0225	ldloc.s	axis2 (8)
-161	0227	ldc.r4	1
-162	022C	bne.un.s	169 (0240) ldloc.s axis2 (8)
-163	022E	ldloc.s	axis (7)
-164	0230	ldc.r4	1
-165	0235	bne.un.s	169 (0240) ldloc.s axis2 (8)
-166	0237	ldc.r4	1
-167	023C	stloc.s	dpadX (9)
-168	023E	br.s	177 (0259) ldloc.s dpadX (9)
-169	0240	ldloc.s	axis2 (8)
-170	0242	ldc.r4	-1
-171	0247	bne.un.s	177 (0259) ldloc.s dpadX (9)
-172	0249	ldloc.s	axis (7)
-173	024B	ldc.r4	-1
-174	0250	bne.un.s	177 (0259) ldloc.s dpadX (9)
-175	0252	ldc.r4	-1
-176	0257	stloc.s	dpadX (9)
-177	0259	ldloc.s	dpadX (9)
-178	025B	stloc.s	num3 (5)
-179	025D	ldloc.s	dpadY (10)
-180	025F	stloc.s	num4 (6)
-181	0261	br	413 (05CF) ldloc.1 
-182	0266	ldloca.s	vector2 (1)
-183	0268	ldstr	"ControllerAxis1"
-184	026D	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
-185	0272	stfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::x
-186	0277	ldloca.s	vector2 (1)
-187	0279	ldstr	"ControllerAxis2"
-188	027E	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
-189	0283	stfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::y
-190	0288	ldloca.s	vector4 (2)
-191	028A	ldstr	"ControllerAxis3"
-192	028F	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
-193	0294	stfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::x
-194	0299	ldloca.s	vector4 (2)
-195	029B	ldstr	"ControllerAxis4"
-196	02A0	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
-197	02A5	stfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::y
-198	02AA	ldstr	"ControllerAxis5"
-199	02AF	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
-200	02B4	stloc.3
-201	02B5	ldstr	"ControllerAxis6"
-202	02BA	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
-203	02BF	stloc.s	num2 (4)
-204	02C1	ldstr	"ControllerAxis7"
-205	02C6	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
-206	02CB	stloc.s	axis (7)
-207	02CD	ldstr	"ControllerAxis8"
-208	02D2	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
-209	02D7	stloc.s	axis2 (8)
-210	02D9	ldc.r4	0
-211	02DE	stloc.s	dpadX (9)
-212	02E0	ldc.r4	0
-213	02E5	stloc.s	dpadY (10)
-214	02E7	ldloc.s	axis (7)
-215	02E9	ldc.r4	0
-216	02EE	beq.s	220 (02F9) ldloc.s axis (7)
-217	02F0	ldloc.s	axis2 (8)
-218	02F2	ldc.r4	0
-219	02F7	bne.un.s	226 (030B) ldloc.s axis2 (8)
-220	02F9	ldloc.s	axis (7)
-221	02FB	ldc.r4	0
-222	0300	beq.s	261 (0375) ldloc.s dpadX (9)
-223	0302	ldloc.s	axis2 (8)
-224	0304	ldc.r4	-1
-225	0309	beq.s	261 (0375) ldloc.s dpadX (9)
-226	030B	ldloc.s	axis2 (8)
-227	030D	ldc.r4	-1
-228	0312	bne.un.s	235 (0326) ldloc.s axis2 (8)
-229	0314	ldloc.s	axis (7)
-230	0316	ldc.r4	1
-231	031B	bne.un.s	235 (0326) ldloc.s axis2 (8)
-232	031D	ldc.r4	1
-233	0322	stloc.s	dpadY (10)
-234	0324	br.s	261 (0375) ldloc.s dpadX (9)
-235	0326	ldloc.s	axis2 (8)
-236	0328	ldc.r4	1
-237	032D	bne.un.s	244 (0341) ldloc.s axis2 (8)
-238	032F	ldloc.s	axis (7)
-239	0331	ldc.r4	-1
-240	0336	bne.un.s	244 (0341) ldloc.s axis2 (8)
-241	0338	ldc.r4	-1
-242	033D	stloc.s	dpadY (10)
-243	033F	br.s	261 (0375) ldloc.s dpadX (9)
-244	0341	ldloc.s	axis2 (8)
-245	0343	ldc.r4	1
-246	0348	bne.un.s	253 (035C) ldloc.s axis2 (8)
-247	034A	ldloc.s	axis (7)
-248	034C	ldc.r4	1
-249	0351	bne.un.s	253 (035C) ldloc.s axis2 (8)
-250	0353	ldc.r4	1
-251	0358	stloc.s	dpadX (9)
-252	035A	br.s	261 (0375) ldloc.s dpadX (9)
-253	035C	ldloc.s	axis2 (8)
-254	035E	ldc.r4	-1
-255	0363	bne.un.s	261 (0375) ldloc.s dpadX (9)
-256	0365	ldloc.s	axis (7)
-257	0367	ldc.r4	-1
-258	036C	bne.un.s	261 (0375) ldloc.s dpadX (9)
-259	036E	ldc.r4	-1
-260	0373	stloc.s	dpadX (9)
-261	0375	ldloc.s	dpadX (9)
-262	0377	stloc.s	num3 (5)
-263	0379	ldloc.s	dpadY (10)
-264	037B	stloc.s	num4 (6)
-265	037D	br	413 (05CF) ldloc.1 
-266	0382	ldloca.s	vector2 (1)
-267	0384	ldstr	"ControllerAxis1"
-268	0389	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
-269	038E	stfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::x
-270	0393	ldloca.s	vector2 (1)
-271	0395	ldstr	"ControllerAxis2"
-272	039A	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
-273	039F	stfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::y
-274	03A4	ldloca.s	vector4 (2)
-275	03A6	ldstr	"ControllerAxis3"
-276	03AB	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
-277	03B0	stfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::x
-278	03B5	ldloca.s	vector4 (2)
-279	03B7	ldstr	"ControllerAxis6"
-280	03BC	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
-281	03C1	stfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::y
-282	03C6	ldstr	"ControllerAxis4"
-283	03CB	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
-284	03D0	ldc.r4	0,5
-285	03D5	mul
-286	03D6	ldc.r4	0,5
-287	03DB	add
-288	03DC	stloc.3
-289	03DD	ldstr	"ControllerAxis5"
-290	03E2	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
-291	03E7	ldc.r4	0,5
-292	03EC	mul
-293	03ED	ldc.r4	0,5
-294	03F2	add
-295	03F3	stloc.s	num2 (4)
-296	03F5	ldstr	"ControllerAxis7"
-297	03FA	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
-298	03FF	stloc.s	num3 (5)
-299	0401	ldstr	"ControllerAxis8"
-300	0406	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
-301	040B	stloc.s	num4 (6)
-302	040D	br	413 (05CF) ldloc.1 
-303	0412	ldloca.s	vector2 (1)
-304	0414	ldstr	"ControllerAxis1"
-305	0419	call	float32 [PlatformInputDefault]Platform.Utils.InputUtils::GetAxis(string)
-306	041E	stfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::x
-307	0423	ldloca.s	vector2 (1)
-308	0425	ldstr	"ControllerAxis2"
-309	042A	call	float32 [PlatformInputDefault]Platform.Utils.InputUtils::GetAxis(string)
-310	042F	stfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::y
-311	0434	ldloca.s	vector4 (2)
-312	0436	ldstr	"ControllerAxis4"
-313	043B	call	float32 [PlatformInputDefault]Platform.Utils.InputUtils::GetAxis(string)
-314	0440	stfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::x
-315	0445	ldloca.s	vector4 (2)
-316	0447	ldstr	"ControllerAxis5"
-317	044C	call	float32 [PlatformInputDefault]Platform.Utils.InputUtils::GetAxis(string)
-318	0451	stfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::y
-319	0456	ldstr	"ControllerAxis3"
-320	045B	call	float32 [PlatformInputDefault]Platform.Utils.InputUtils::GetAxis(string)
-321	0460	ldc.r4	0
-322	0465	call	float32 [UnityEngine.CoreModule]UnityEngine.Mathf::Max(float32, float32)
-323	046A	stloc.3
-324	046B	ldstr	"ControllerAxis3"
-325	0470	call	float32 [PlatformInputDefault]Platform.Utils.InputUtils::GetAxis(string)
-326	0475	neg
-327	0476	ldc.r4	0
-328	047B	call	float32 [UnityEngine.CoreModule]UnityEngine.Mathf::Max(float32, float32)
-329	0480	stloc.s	num2 (4)
-330	0482	ldstr	"ControllerAxis6"
-331	0487	call	float32 [PlatformInputDefault]Platform.Utils.InputUtils::GetAxis(string)
-332	048C	stloc.s	num3 (5)
-333	048E	ldstr	"ControllerAxis7"
-334	0493	call	float32 [PlatformInputDefault]Platform.Utils.InputUtils::GetAxis(string)
-335	0498	stloc.s	num4 (6)
-336	049A	br	413 (05CF) ldloc.1 
-337	049F	ldloca.s	vector2 (1)
-338	04A1	ldstr	"ControllerAxis1"
-339	04A6	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
-340	04AB	stfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::x
-341	04B0	ldloca.s	vector2 (1)
-342	04B2	ldstr	"ControllerAxis2"
-343	04B7	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
-344	04BC	stfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::y
-345	04C1	ldloca.s	vector4 (2)
-346	04C3	ldstr	"ControllerAxis4"
-347	04C8	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
-348	04CD	stfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::x
-349	04D2	ldloca.s	vector4 (2)
-350	04D4	ldstr	"ControllerAxis5"
-351	04D9	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
-352	04DE	stfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::y
-353	04E3	ldstr	"ControllerAxis9"
-354	04E8	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
-355	04ED	ldc.r4	0
-356	04F2	call	float32 [UnityEngine.CoreModule]UnityEngine.Mathf::Max(float32, float32)
-357	04F7	stloc.3
-358	04F8	ldstr	"ControllerAxis10"
-359	04FD	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
-360	0502	ldc.r4	0
-361	0507	call	float32 [UnityEngine.CoreModule]UnityEngine.Mathf::Max(float32, float32)
-362	050C	stloc.s	num2 (4)
-363	050E	ldstr	"ControllerAxis6"
-364	0513	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
-365	0518	stloc.s	num3 (5)
-366	051A	ldstr	"ControllerAxis7"
-367	051F	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
-368	0524	stloc.s	num4 (6)
-369	0526	br	413 (05CF) ldloc.1 
-370	052B	ldloca.s	vector2 (1)
-371	052D	ldstr	"ControllerAxis1"
-372	0532	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
-373	0537	stfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::x
-374	053C	ldloca.s	vector2 (1)
-375	053E	ldstr	"ControllerAxis2"
-376	0543	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
-377	0548	stfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::y
-378	054D	ldloca.s	vector4 (2)
-379	054F	ldstr	"ControllerAxis3"
-380	0554	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
-381	0559	stfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::x
-382	055E	ldloca.s	vector4 (2)
-383	0560	ldstr	"ControllerAxis6"
-384	0565	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
-385	056A	stfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::y
-386	056F	ldstr	"ControllerAxis4"
-387	0574	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
-388	0579	ldc.r4	0,5
-389	057E	mul
-390	057F	ldc.r4	0,5
-391	0584	add
-392	0585	stloc.3
-393	0586	ldstr	"ControllerAxis5"
-394	058B	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
-395	0590	ldc.r4	0,5
-396	0595	mul
-397	0596	ldc.r4	0,5
-398	059B	add
-399	059C	stloc.s	num2 (4)
-400	059E	ldstr	"ControllerAxis7"
-401	05A3	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
-402	05A8	stloc.s	num3 (5)
-403	05AA	ldstr	"ControllerAxis8"
-404	05AF	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
-405	05B4	stloc.s	num4 (6)
-406	05B6	br.s	413 (05CF) ldloc.1 
-407	05B8	ldstr	"{0} ControllerLayout support is not implemented!"
-408	05BD	ldloc.s	controllerLayout (13)
-409	05BF	box	GameInput/ControllerLayout
-410	05C4	call	string [mscorlib]System.String::Format(string, object)
-411	05C9	newobj	instance void [mscorlib]System.NotImplementedException::.ctor(string)
-412	05CE	throw
-413	05CF	ldloc.1
-414	05D0	ldc.r4	0,2
-415	05D5	ldc.r4	1
-416	05DA	call	valuetype [UnityEngine.CoreModule]UnityEngine.Vector2 GameInput::Resample(valuetype [UnityEngine.CoreModule]UnityEngine.Vector2, float32, float32)
-417	05DF	stloc.1
-418	05E0	ldsfld	float32[] GameInput::axisValues
-419	05E5	ldc.i4.2
-420	05E6	ldloc.1
-421	05E7	ldfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::x
-422	05EC	stelem.r4
-423	05ED	ldsfld	float32[] GameInput::axisValues
-424	05F2	ldc.i4.3
-425	05F3	ldloc.1
-426	05F4	ldfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::y
-427	05F9	stelem.r4
-428	05FA	ldloc.2
-429	05FB	ldc.r4	0,2
-430	0600	ldc.r4	1
-431	0605	call	valuetype [UnityEngine.CoreModule]UnityEngine.Vector2 GameInput::Resample(valuetype [UnityEngine.CoreModule]UnityEngine.Vector2, float32, float32)
-432	060A	stloc.2
-433	060B	ldsfld	float32[] GameInput::axisValues
-434	0610	ldc.i4.0
-435	0611	ldloc.2
-436	0612	ldfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::x
-437	0617	stelem.r4
-438	0618	ldsfld	float32[] GameInput::axisValues
-439	061D	ldc.i4.1
-440	061E	ldloc.2
-441	061F	ldfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::y
-442	0624	stelem.r4
-443	0625	ldsfld	float32[] GameInput::axisValues
-444	062A	ldc.i4.4
-445	062B	ldloc.3
-446	062C	ldc.r4	0,001
-447	0631	ldc.r4	1
-448	0636	call	float32 GameInput::Resample(float32, float32, float32)
-449	063B	stelem.r4
-450	063C	ldsfld	float32[] GameInput::axisValues
-451	0641	ldc.i4.5
-452	0642	ldloc.s	num2 (4)
-453	0644	ldc.r4	0,001
-454	0649	ldc.r4	1
-455	064E	call	float32 GameInput::Resample(float32, float32, float32)
-456	0653	stelem.r4
-457	0654	ldsfld	float32[] GameInput::axisValues
-458	0659	ldc.i4.6
-459	065A	ldloc.s	num3 (5)
-460	065C	ldc.r4	0,001
-461	0661	ldc.r4	1
-462	0666	call	float32 GameInput::Resample(float32, float32, float32)
-463	066B	stelem.r4
-464	066C	ldsfld	float32[] GameInput::axisValues
-465	0671	ldc.i4.7
-466	0672	ldloc.s	num4 (6)
-467	0674	ldc.r4	0,001
-468	0679	ldc.r4	1
-469	067E	call	float32 GameInput::Resample(float32, float32, float32)
-470	0683	stelem.r4
-471	0684	ldarg.1
-472	0685	brfalse.s	488 (06BC) ldc.i4.0 
-473	0687	ldsfld	float32[] GameInput::axisValues
-474	068C	ldc.i4.s	10
-475	068E	ldstr	"Mouse ScrollWheel"
-476	0693	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
-477	0698	stelem.r4
-478	0699	ldsfld	float32[] GameInput::axisValues
-479	069E	ldc.i4.8
-480	069F	ldstr	"Mouse X"
-481	06A4	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxisRaw(string)
-482	06A9	stelem.r4
-483	06AA	ldsfld	float32[] GameInput::axisValues
-484	06AF	ldc.i4.s	9
-485	06B1	ldstr	"Mouse Y"
-486	06B6	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxisRaw(string)
-487	06BB	stelem.r4
-488	06BC	ldc.i4.0
-489	06BD	stloc.s	j (14)
-490	06BF	br.s	531 (0729) ldloc.s j (14)
-491	06C1	ldloc.s	j (14)
-492	06C3	stloc.s	analogAxis (15)
-493	06C5	ldarg.0
-494	06C6	ldloc.s	analogAxis (15)
-495	06C8	call	instance valuetype GameInput/Device GameInput::GetDeviceForAxis(valuetype GameInput/AnalogAxis)
-496	06CD	stloc.s	deviceForAxis (16)
-497	06CF	ldsfld	float32[] GameInput::lastAxisValues
-498	06D4	ldloc.s	j (14)
-499	06D6	ldelem.r4
-500	06D7	ldsfld	float32[] GameInput::axisValues
-501	06DC	ldloc.s	j (14)
-502	06DE	ldelem.r4
-503	06DF	sub
-504	06E0	stloc.s	num5 (17)
-505	06E2	ldsfld	float32[] GameInput::lastAxisValues
-506	06E7	ldloc.s	j (14)
-507	06E9	ldsfld	float32[] GameInput::axisValues
-508	06EE	ldloc.s	j (14)
-509	06F0	ldelem.r4
-510	06F1	stelem.r4
-511	06F2	ldloc.s	deviceForAxis (16)
-512	06F4	ldsfld	valuetype GameInput/Device GameInput::lastDevice
-513	06F9	beq.s	527 (0723) ldloc.s j (14)
-514	06FB	ldc.r4	0,1
-515	0700	stloc.s	num6 (18)
-516	0702	ldloc.s	num5 (17)
-517	0704	call	float32 [UnityEngine.CoreModule]UnityEngine.Mathf::Abs(float32)
-518	0709	ldloc.s	num6 (18)
-519	070B	ble.un.s	523 (0716) ldsfld float32[] GameInput::axisValues
-520	070D	ldloc.s	deviceForAxis (16)
-521	070F	stsfld	valuetype GameInput/Device GameInput::lastDevice
-522	0714	br.s	527 (0723) ldloc.s j (14)
-523	0716	ldsfld	float32[] GameInput::axisValues
-524	071B	ldloc.s	j (14)
-525	071D	ldc.r4	0
-526	0722	stelem.r4
-527	0723	ldloc.s	j (14)
-528	0725	ldc.i4.1
-529	0726	add
-530	0727	stloc.s	j (14)
-531	0729	ldloc.s	j (14)
-532	072B	ldsfld	float32[] GameInput::axisValues
-533	0730	ldlen
-534	0731	conv.i4
-535	0732	blt.s	491 (06C1) ldloc.s j (14)
-536	0734	ret
+125	01BB	neg
+126	01BC	stloc.s	num4 (6)
+127	01BE	br	305 (0489) ldloc.1 
+128	01C3	ldloca.s	vector2 (1)
+129	01C5	ldstr	"ControllerAxis1"
+130	01CA	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
+131	01CF	stfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::x
+132	01D4	ldloca.s	vector2 (1)
+133	01D6	ldstr	"ControllerAxis2"
+134	01DB	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
+135	01E0	stfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::y
+136	01E5	ldloca.s	vector4 (2)
+137	01E7	ldstr	"ControllerAxis3"
+138	01EC	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
+139	01F1	stfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::x
+140	01F6	ldloca.s	vector4 (2)
+141	01F8	ldstr	"ControllerAxis4"
+142	01FD	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
+143	0202	stfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::y
+144	0207	ldstr	"ControllerAxis5"
+145	020C	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
+146	0211	stloc.3
+147	0212	ldstr	"ControllerAxis6"
+148	0217	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
+149	021C	stloc.s	num2 (4)
+150	021E	ldstr	"ControllerAxis7"
+151	0223	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
+152	0228	stloc.s	num3 (5)
+153	022A	ldstr	"ControllerAxis8"
+154	022F	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
+155	0234	neg
+156	0235	stloc.s	num4 (6)
+157	0237	br	305 (0489) ldloc.1 
+158	023C	ldloca.s	vector2 (1)
+159	023E	ldstr	"ControllerAxis1"
+160	0243	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
+161	0248	stfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::x
+162	024D	ldloca.s	vector2 (1)
+163	024F	ldstr	"ControllerAxis2"
+164	0254	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
+165	0259	stfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::y
+166	025E	ldloca.s	vector4 (2)
+167	0260	ldstr	"ControllerAxis3"
+168	0265	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
+169	026A	stfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::x
+170	026F	ldloca.s	vector4 (2)
+171	0271	ldstr	"ControllerAxis6"
+172	0276	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
+173	027B	stfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::y
+174	0280	ldstr	"ControllerAxis4"
+175	0285	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
+176	028A	ldc.r4	0,5
+177	028F	mul
+178	0290	ldc.r4	0,5
+179	0295	add
+180	0296	stloc.3
+181	0297	ldstr	"ControllerAxis5"
+182	029C	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
+183	02A1	ldc.r4	0,5
+184	02A6	mul
+185	02A7	ldc.r4	0,5
+186	02AC	add
+187	02AD	stloc.s	num2 (4)
+188	02AF	ldstr	"ControllerAxis7"
+189	02B4	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
+190	02B9	stloc.s	num3 (5)
+191	02BB	ldstr	"ControllerAxis8"
+192	02C0	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
+193	02C5	stloc.s	num4 (6)
+194	02C7	br	305 (0489) ldloc.1 
+195	02CC	ldloca.s	vector2 (1)
+196	02CE	ldstr	"ControllerAxis1"
+197	02D3	call	float32 [PlatformInputDefault]Platform.Utils.InputUtils::GetAxis(string)
+198	02D8	stfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::x
+199	02DD	ldloca.s	vector2 (1)
+200	02DF	ldstr	"ControllerAxis2"
+201	02E4	call	float32 [PlatformInputDefault]Platform.Utils.InputUtils::GetAxis(string)
+202	02E9	stfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::y
+203	02EE	ldloca.s	vector4 (2)
+204	02F0	ldstr	"ControllerAxis4"
+205	02F5	call	float32 [PlatformInputDefault]Platform.Utils.InputUtils::GetAxis(string)
+206	02FA	stfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::x
+207	02FF	ldloca.s	vector4 (2)
+208	0301	ldstr	"ControllerAxis5"
+209	0306	call	float32 [PlatformInputDefault]Platform.Utils.InputUtils::GetAxis(string)
+210	030B	stfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::y
+211	0310	ldstr	"ControllerAxis3"
+212	0315	call	float32 [PlatformInputDefault]Platform.Utils.InputUtils::GetAxis(string)
+213	031A	ldc.r4	0
+214	031F	call	float32 [UnityEngine.CoreModule]UnityEngine.Mathf::Max(float32, float32)
+215	0324	stloc.3
+216	0325	ldstr	"ControllerAxis3"
+217	032A	call	float32 [PlatformInputDefault]Platform.Utils.InputUtils::GetAxis(string)
+218	032F	neg
+219	0330	ldc.r4	0
+220	0335	call	float32 [UnityEngine.CoreModule]UnityEngine.Mathf::Max(float32, float32)
+221	033A	stloc.s	num2 (4)
+222	033C	ldstr	"ControllerAxis6"
+223	0341	call	float32 [PlatformInputDefault]Platform.Utils.InputUtils::GetAxis(string)
+224	0346	stloc.s	num3 (5)
+225	0348	ldstr	"ControllerAxis7"
+226	034D	call	float32 [PlatformInputDefault]Platform.Utils.InputUtils::GetAxis(string)
+227	0352	stloc.s	num4 (6)
+228	0354	br	305 (0489) ldloc.1 
+229	0359	ldloca.s	vector2 (1)
+230	035B	ldstr	"ControllerAxis1"
+231	0360	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
+232	0365	stfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::x
+233	036A	ldloca.s	vector2 (1)
+234	036C	ldstr	"ControllerAxis2"
+235	0371	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
+236	0376	stfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::y
+237	037B	ldloca.s	vector4 (2)
+238	037D	ldstr	"ControllerAxis4"
+239	0382	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
+240	0387	stfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::x
+241	038C	ldloca.s	vector4 (2)
+242	038E	ldstr	"ControllerAxis5"
+243	0393	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
+244	0398	stfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::y
+245	039D	ldstr	"ControllerAxis9"
+246	03A2	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
+247	03A7	ldc.r4	0
+248	03AC	call	float32 [UnityEngine.CoreModule]UnityEngine.Mathf::Max(float32, float32)
+249	03B1	stloc.3
+250	03B2	ldstr	"ControllerAxis10"
+251	03B7	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
+252	03BC	ldc.r4	0
+253	03C1	call	float32 [UnityEngine.CoreModule]UnityEngine.Mathf::Max(float32, float32)
+254	03C6	stloc.s	num2 (4)
+255	03C8	ldstr	"ControllerAxis6"
+256	03CD	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
+257	03D2	stloc.s	num3 (5)
+258	03D4	ldstr	"ControllerAxis7"
+259	03D9	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
+260	03DE	stloc.s	num4 (6)
+261	03E0	br	305 (0489) ldloc.1 
+262	03E5	ldloca.s	vector2 (1)
+263	03E7	ldstr	"ControllerAxis1"
+264	03EC	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
+265	03F1	stfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::x
+266	03F6	ldloca.s	vector2 (1)
+267	03F8	ldstr	"ControllerAxis2"
+268	03FD	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
+269	0402	stfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::y
+270	0407	ldloca.s	vector4 (2)
+271	0409	ldstr	"ControllerAxis3"
+272	040E	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
+273	0413	stfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::x
+274	0418	ldloca.s	vector4 (2)
+275	041A	ldstr	"ControllerAxis6"
+276	041F	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
+277	0424	stfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::y
+278	0429	ldstr	"ControllerAxis4"
+279	042E	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
+280	0433	ldc.r4	0,5
+281	0438	mul
+282	0439	ldc.r4	0,5
+283	043E	add
+284	043F	stloc.3
+285	0440	ldstr	"ControllerAxis5"
+286	0445	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
+287	044A	ldc.r4	0,5
+288	044F	mul
+289	0450	ldc.r4	0,5
+290	0455	add
+291	0456	stloc.s	num2 (4)
+292	0458	ldstr	"ControllerAxis7"
+293	045D	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
+294	0462	stloc.s	num3 (5)
+295	0464	ldstr	"ControllerAxis8"
+296	0469	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
+297	046E	stloc.s	num4 (6)
+298	0470	br.s	305 (0489) ldloc.1 
+299	0472	ldstr	"{0} ControllerLayout support is not implemented!"
+300	0477	ldloc.s	controllerLayout (9)
+301	0479	box	GameInput/ControllerLayout
+302	047E	call	string [mscorlib]System.String::Format(string, object)
+303	0483	newobj	instance void [mscorlib]System.NotImplementedException::.ctor(string)
+304	0488	throw
+305	0489	ldloc.1
+306	048A	ldc.r4	0,2
+307	048F	ldc.r4	1
+308	0494	call	valuetype [UnityEngine.CoreModule]UnityEngine.Vector2 GameInput::Resample(valuetype [UnityEngine.CoreModule]UnityEngine.Vector2, float32, float32)
+309	0499	stloc.1
+310	049A	ldsfld	float32[] GameInput::axisValues
+311	049F	ldc.i4.2
+312	04A0	ldloc.1
+313	04A1	ldfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::x
+314	04A6	stelem.r4
+315	04A7	ldsfld	float32[] GameInput::axisValues
+316	04AC	ldc.i4.3
+317	04AD	ldloc.1
+318	04AE	ldfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::y
+319	04B3	stelem.r4
+320	04B4	ldloc.2
+321	04B5	ldc.r4	0,2
+322	04BA	ldc.r4	1
+323	04BF	call	valuetype [UnityEngine.CoreModule]UnityEngine.Vector2 GameInput::Resample(valuetype [UnityEngine.CoreModule]UnityEngine.Vector2, float32, float32)
+324	04C4	stloc.2
+325	04C5	ldsfld	float32[] GameInput::axisValues
+326	04CA	ldc.i4.0
+327	04CB	ldloc.2
+328	04CC	ldfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::x
+329	04D1	stelem.r4
+330	04D2	ldsfld	float32[] GameInput::axisValues
+331	04D7	ldc.i4.1
+332	04D8	ldloc.2
+333	04D9	ldfld	float32 [UnityEngine.CoreModule]UnityEngine.Vector2::y
+334	04DE	stelem.r4
+335	04DF	ldsfld	float32[] GameInput::axisValues
+336	04E4	ldc.i4.4
+337	04E5	ldloc.3
+338	04E6	ldc.r4	0,001
+339	04EB	ldc.r4	1
+340	04F0	call	float32 GameInput::Resample(float32, float32, float32)
+341	04F5	stelem.r4
+342	04F6	ldsfld	float32[] GameInput::axisValues
+343	04FB	ldc.i4.5
+344	04FC	ldloc.s	num2 (4)
+345	04FE	ldc.r4	0,001
+346	0503	ldc.r4	1
+347	0508	call	float32 GameInput::Resample(float32, float32, float32)
+348	050D	stelem.r4
+349	050E	ldsfld	float32[] GameInput::axisValues
+350	0513	ldc.i4.6
+351	0514	ldloc.s	num3 (5)
+352	0516	ldc.r4	0,001
+353	051B	ldc.r4	1
+354	0520	call	float32 GameInput::Resample(float32, float32, float32)
+355	0525	stelem.r4
+356	0526	ldsfld	float32[] GameInput::axisValues
+357	052B	ldc.i4.7
+358	052C	ldloc.s	num4 (6)
+359	052E	ldc.r4	0,001
+360	0533	ldc.r4	1
+361	0538	call	float32 GameInput::Resample(float32, float32, float32)
+362	053D	stelem.r4
+363	053E	ldarg.1
+364	053F	brfalse.s	380 (0576) ldc.i4.0 
+365	0541	ldsfld	float32[] GameInput::axisValues
+366	0546	ldc.i4.s	10
+367	0548	ldstr	"Mouse ScrollWheel"
+368	054D	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxis(string)
+369	0552	stelem.r4
+370	0553	ldsfld	float32[] GameInput::axisValues
+371	0558	ldc.i4.8
+372	0559	ldstr	"Mouse X"
+373	055E	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxisRaw(string)
+374	0563	stelem.r4
+375	0564	ldsfld	float32[] GameInput::axisValues
+376	0569	ldc.i4.s	9
+377	056B	ldstr	"Mouse Y"
+378	0570	call	float32 [UnityEngine.InputLegacyModule]UnityEngine.Input::GetAxisRaw(string)
+379	0575	stelem.r4
+380	0576	ldc.i4.0
+381	0577	stloc.s	j (10)
+382	0579	br.s	423 (05E3) ldloc.s j (10)
+383	057B	ldloc.s	j (10)
+384	057D	stloc.s	analogAxis (11)
+385	057F	ldarg.0
+386	0580	ldloc.s	analogAxis (11)
+387	0582	call	instance valuetype GameInput/Device GameInput::GetDeviceForAxis(valuetype GameInput/AnalogAxis)
+388	0587	stloc.s	deviceForAxis (12)
+389	0589	ldsfld	float32[] GameInput::lastAxisValues
+390	058E	ldloc.s	j (10)
+391	0590	ldelem.r4
+392	0591	ldsfld	float32[] GameInput::axisValues
+393	0596	ldloc.s	j (10)
+394	0598	ldelem.r4
+395	0599	sub
+396	059A	stloc.s	num5 (13)
+397	059C	ldsfld	float32[] GameInput::lastAxisValues
+398	05A1	ldloc.s	j (10)
+399	05A3	ldsfld	float32[] GameInput::axisValues
+400	05A8	ldloc.s	j (10)
+401	05AA	ldelem.r4
+402	05AB	stelem.r4
+403	05AC	ldloc.s	deviceForAxis (12)
+404	05AE	ldsfld	valuetype GameInput/Device GameInput::lastDevice
+405	05B3	beq.s	419 (05DD) ldloc.s j (10)
+406	05B5	ldc.r4	0,1
+407	05BA	stloc.s	num6 (14)
+408	05BC	ldloc.s	num5 (13)
+409	05BE	call	float32 [UnityEngine.CoreModule]UnityEngine.Mathf::Abs(float32)
+410	05C3	ldloc.s	num6 (14)
+411	05C5	ble.un.s	415 (05D0) ldsfld float32[] GameInput::axisValues
+412	05C7	ldloc.s	deviceForAxis (12)
+413	05C9	stsfld	valuetype GameInput/Device GameInput::lastDevice
+414	05CE	br.s	419 (05DD) ldloc.s j (10)
+415	05D0	ldsfld	float32[] GameInput::axisValues
+416	05D5	ldloc.s	j (10)
+417	05D7	ldc.r4	0
+418	05DC	stelem.r4
+419	05DD	ldloc.s	j (10)
+420	05DF	ldc.i4.1
+421	05E0	add
+422	05E1	stloc.s	j (10)
+423	05E3	ldloc.s	j (10)
+424	05E5	ldsfld	float32[] GameInput::axisValues
+425	05EA	ldlen
+426	05EB	conv.i4
+427	05EC	blt.s	383 (057B) ldloc.s j (10)
+428	05EE	ret
