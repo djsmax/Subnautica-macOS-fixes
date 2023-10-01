@@ -1,10 +1,13 @@
+// Tested on Game version: march 2023 build 71288
 using System;
 using System.Collections.Generic;
 using Gendarme;
 using UnityEngine;
 
+// Token: 0x020002DB RID: 731
 public partial class GameInput : MonoBehaviour
 {
+	// Token: 0x0600164E RID: 5710
 	private static string GetKeyCodeAsInputName(KeyCode keyCode)
 	{
 		switch (keyCode)
@@ -38,38 +41,26 @@ public partial class GameInput : MonoBehaviour
 				return "MouseButtonRight";
 			case KeyCode.Mouse2:
 				return "MouseButtonMiddle";
-			case KeyCode.JoystickButton0:
-				return "ControllerButtonA";
 			case KeyCode.JoystickButton1:
-				return "ControllerButtonB";
+				return "ControllerButtonA";
 			case KeyCode.JoystickButton2:
-				return "JoystickButton2";
+				return "ControllerButtonB";
 			case KeyCode.JoystickButton3:
 				return "ControllerButtonX";
 			case KeyCode.JoystickButton4:
 				return "ControllerButtonY";
 			case KeyCode.JoystickButton5:
-				return "JoystickButton5";
-			case KeyCode.JoystickButton6:
 				return "ControllerButtonLeftBumper";
-			case KeyCode.JoystickButton7:
+			case KeyCode.JoystickButton6:
 				return "ControllerButtonRightBumper";
+			case KeyCode.JoystickButton7:
+				return "ControllerButtonBack";
 			case KeyCode.JoystickButton8:
-				return "JoystickButton8";
-			case KeyCode.JoystickButton9:
-				return "JoystickButton9";
-			case KeyCode.JoystickButton10:
-				return "ControllerButtonBack";
-			case KeyCode.JoystickButton11:
 				return "ControllerButtonHome";
-			case KeyCode.JoystickButton12:
-				return "ControllerButtonBack";
-			case KeyCode.JoystickButton13:
+			case KeyCode.JoystickButton9:
 				return "ControllerButtonLeftStick";
-			case KeyCode.JoystickButton14:
+			case KeyCode.JoystickButton10:
 				return "ControllerButtonRightStick";
-			case KeyCode.JoystickButton15:
-				return "ControllerRecordButton";
 			}
 			return keyCode.ToString();
 		}

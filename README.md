@@ -6,6 +6,7 @@
 ### Fixes and improvements:
 - **Fix gamepad support:**
   - Gamepad axis and button mappings are all over the place in this game. This has been well documented over the years (most recent: [here](https://steamcommunity.com/app/264710/discussions/3/1658943116242610940/)). Now play with a controller as usual!
+    > Tested on Game version: march 2023 build 71288
 - **Fix random crashes on Apple Silicon Macs**:
   - Unity can crash while allocating memory due to a race condition. Weirdly seems to affect only Rosetta 2. It crashes Subnautica seldom at init or right before saving the game (lol). Mem mgmnt for Mono was refactored upstream (2020.2 and up), so a rather ugly patch was made to make it care less.
 - **un-DRM (Epic builds):**
