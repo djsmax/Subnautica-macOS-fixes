@@ -60,3 +60,6 @@ Sure, but I'm working on my own C# & Unity patcher specifically for macOS; Mono-
 Absolutely! No deadline though.
 
 Gamepad fix and un-DRM (Epic) also work with Below Zero.
+
+Contributors:
+- <a href="https://github.com/x-0D">&lt;x0D&gt; Nikita Bragin</a>: gamepad compatability update and testing on build 71288
