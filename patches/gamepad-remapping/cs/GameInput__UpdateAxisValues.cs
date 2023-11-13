@@ -81,11 +81,11 @@ public partial class GameInput : MonoBehaviour
 					vector2.x = UnityEngine.Input.GetAxis("ControllerAxis1");
 					vector2.y = UnityEngine.Input.GetAxis("ControllerAxis2");
 					vector4.x = UnityEngine.Input.GetAxis("ControllerAxis3");
-					vector4.y = UnityEngine.Input.GetAxis("ControllerAxis6");
-					num = UnityEngine.Input.GetAxis("ControllerAxis4") * 0.5f + 0.5f;
-					num2 = UnityEngine.Input.GetAxis("ControllerAxis5") * 0.5f + 0.5f;
+					vector4.y = UnityEngine.Input.GetAxis("ControllerAxis4");
+					num = UnityEngine.Input.GetAxis("ControllerAxis5");
+					num2 = UnityEngine.Input.GetAxis("ControllerAxis6");
 					num3 = UnityEngine.Input.GetAxis("ControllerAxis7");
-					num4 = UnityEngine.Input.GetAxis("ControllerAxis8");
+					num4 = -UnityEngine.Input.GetAxis("ControllerAxis8");
 					break;
 				case GameInput.ControllerLayout.Switch:
 					vector2.x = InputUtils.GetAxis("ControllerAxis1");
@@ -111,11 +111,11 @@ public partial class GameInput : MonoBehaviour
 					vector2.x = UnityEngine.Input.GetAxis("ControllerAxis1");
 					vector2.y = UnityEngine.Input.GetAxis("ControllerAxis2");
 					vector4.x = UnityEngine.Input.GetAxis("ControllerAxis3");
-					vector4.y = UnityEngine.Input.GetAxis("ControllerAxis6");
-					num = UnityEngine.Input.GetAxis("ControllerAxis4") * 0.5f + 0.5f;
-					num2 = UnityEngine.Input.GetAxis("ControllerAxis5") * 0.5f + 0.5f;
+					vector4.y = UnityEngine.Input.GetAxis("ControllerAxis4");
+					num = UnityEngine.Input.GetAxis("ControllerAxis5");
+					num2 = UnityEngine.Input.GetAxis("ControllerAxis6");
 					num3 = UnityEngine.Input.GetAxis("ControllerAxis7");
-					num4 = UnityEngine.Input.GetAxis("ControllerAxis8");
+					num4 = -UnityEngine.Input.GetAxis("ControllerAxis8");
 					break;
 				default:
 					throw new NotImplementedException(string.Format("{0} ControllerLayout support is not implemented!", controllerLayout));
